@@ -74,4 +74,32 @@ set_location_assignment PIN_126 -to digit_code[2]
 set_location_assignment PIN_124 -to digit_code[1]
 set_location_assignment PIN_127 -to digit_code[0]
 set_location_assignment PIN_23 -to clock
+set_location_assignment PIN_90 -to dec
+set_location_assignment PIN_91 -to inc
+set_location_assignment PIN_89 -to next
+set_location_assignment PIN_88 -to prev
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to clock
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dec
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dig1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to digit_code[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to digit_code[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to digit_code[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to digit_code[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to digit_code[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to digit_code[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to digit_code[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to digit_code[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to inc
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to next
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to prev
+set_location_assignment PIN_135 -to dig2
+set_location_assignment PIN_136 -to dig3
+set_location_assignment PIN_137 -to dig4
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dig2
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dig3
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to dig4
+set_global_assignment -name VERILOG_FILE output_files/debouncer.v
+set_location_assignment PIN_84 -to l1
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to l1
+set_global_assignment -name VERILOG_FILE debouncer.v
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
