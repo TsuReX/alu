@@ -41,7 +41,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 96 488 264 504)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "prev" (rect 5 0 28 11)(font "Arial" ))
+	(text "prev" (rect 5 0 27 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -58,7 +58,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 96 608 264 624)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "next" (rect 5 0 28 13)(font "Intel Clear" ))
+	(text "next" (rect 5 0 27 13)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -75,7 +75,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 112 848 280 864)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "inc" (rect 5 0 21 13)(font "Intel Clear" ))
+	(text "inc" (rect 5 0 20 13)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -92,7 +92,7 @@ https://fpgasoftware.intel.com/eula.
 	(input)
 	(rect 112 728 280 744)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "dec" (rect 5 0 24 13)(font "Intel Clear" ))
+	(text "dec" (rect 5 0 23 13)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -284,7 +284,7 @@ https://fpgasoftware.intel.com/eula.
 		(pt 224 32)
 		(output)
 		(text "digit_code[7..0]" (rect 0 0 75 11)(font "Arial" ))
-		(text "digit_code[7..0]" (rect 140 27 203 38)(font "Arial" ))
+		(text "digit_code[7..0]" (rect 140 27 215 38)(font "Arial" ))
 		(line (pt 224 32)(pt 208 32)(line_width 3))
 	)
 	(drawing
@@ -368,7 +368,7 @@ https://fpgasoftware.intel.com/eula.
 		(pt 248 32)
 		(output)
 		(text "counter_out[4..0]" (rect 0 0 82 11)(font "Arial" ))
-		(text "counter_out[4..0]" (rect 158 27 227 38)(font "Arial" ))
+		(text "counter_out[4..0]" (rect 158 27 240 38)(font "Arial" ))
 		(line (pt 248 32)(pt 232 32)(line_width 3))
 	)
 	(drawing
@@ -404,7 +404,7 @@ https://fpgasoftware.intel.com/eula.
 		(pt 168 32)
 		(output)
 		(text "pulse" (rect 0 0 27 11)(font "Arial" ))
-		(text "pulse" (rect 125 27 147 38)(font "Arial" ))
+		(text "pulse" (rect 125 27 152 38)(font "Arial" ))
 		(line (pt 168 32)(pt 152 32))
 	)
 	(drawing
@@ -894,6 +894,60 @@ https://fpgasoftware.intel.com/eula.
 		(line (pt 16 40)(pt 16 24))
 	)
 	(annotation_block (parameter)(rect -136 872 83 917))
+)
+(symbol
+	(rect 688 552 888 664)
+	(text "serializer" (rect 5 0 49 11)(font "Arial" ))
+	(text "inst22" (rect 8 96 39 109)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 25 11)(font "Arial" ))
+		(text "clock" (rect 21 27 46 38)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "par_input[7..0]" (rect 0 0 70 11)(font "Arial" ))
+		(text "par_input[7..0]" (rect 21 43 91 54)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "store" (rect 0 0 24 11)(font "Arial" ))
+		(text "store" (rect 21 59 45 70)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 200 32)
+		(output)
+		(text "ser_output" (rect 0 0 53 11)(font "Arial" ))
+		(text "ser_output" (rect 135 27 188 38)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32))
+	)
+	(port
+		(pt 200 48)
+		(output)
+		(text "empty" (rect 0 0 30 11)(font "Arial" ))
+		(text "empty" (rect 154 43 184 54)(font "Arial" ))
+		(line (pt 200 48)(pt 184 48))
+	)
+	(parameter
+		"state_empty"
+		"00"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(parameter
+		"state_trans"
+		"01"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(drawing
+		(rectangle (rect 16 16 184 96))
+	)
+	(annotation_block (parameter)(rect 888 504 1080 552))
 )
 (connector
 	(pt 280 496)
