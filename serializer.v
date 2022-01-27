@@ -48,7 +48,7 @@ always @ (posedge clock)
 		endcase
 	end
 
-endmodule
+endmodule // serializer_1 (clock, par_input, store, ser_output, empty)
 
 module serializer_2 (clock, ser_clock, par_input, store, ser_output, empty);
 
@@ -67,59 +67,41 @@ reg [7:0] data;
 reg [2:0] count;
 
 always @ (posedge clock)
-	begin
-		case (state)
-				
-				state_empty:
-					begin
-						if (state == 1'b1)
-							begin
-								state <= state_trans;
-								data <= par_input;
-								count <= 8;
-								empty <= 0;
-							end
-					end
-				
-				state_trans:
-					begin
-					end
-				
-				default:
-					begin
-					end
-		endcase
+begin			
+	if (state == state_empty) begin
+		if (store == 1'b1) begin
+			state <= state_trans;
+			data <= par_input;
+			count <= 8;
+			empty <= 0;
+		end
 	end
+end
 
 always @ (posedge ser_clock)
 begin
-	case (state)
-				
-		state_empty:
-			begin
-			end
-		
-		state_trans:
-			begin
-				ser_output <= data[0];
-				data <= data >> 1;
-				count <= count - 1;
-				if (count == 0)
-					begin
-						state <= state_empty;
-						empty <= 1;
-					end
-			end
-		
-		default:
-			begin
+	if (state == state_trans) begin
+		ser_output <= data[0];
+		data <= data >> 1;
+		count <= count - 1;
+		if (count == 0) begin
 				state <= state_empty;
 				empty <= 1;
-			end
-		endcase
+		end
+	end
+end
+
+always @ (negedge ser_clock)
+begin
+	if (state == state_trans) begin
+		if (count == 0) begin
+			state <= state_empty;
+			empty <= 1;
+		end
+	end
 end
 	
-endmodule
+endmodule // serializer_2 (clock, ser_clock, par_input, store, ser_output, empty)
 
 
 module base_serializer (clock, par_data, divider, store, ser_clock, ser_data, empty);
@@ -148,7 +130,7 @@ begin
 			if (store == 1) begin
 				state <= set;
 				_divider <= divider;
-				div_counter <= divider;
+				div_counter <= 0;
 			end
 		end else begin // clock == 0
 			// TODO
@@ -174,4 +156,4 @@ begin
 	end
 end
 	
-endmodule
+endmodule // base_serializer (clock, par_data, divider, store, ser_clock, ser_data, empty)
