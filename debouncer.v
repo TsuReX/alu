@@ -7,26 +7,21 @@ module debouncer(pulse, clock, in_pulse, delay);
 	
 	reg [31:0] count;
 	
-	always @ (posedge clock)
-		begin
-			if (in_pulse == 1'b0) /* button is pushed */
-				begin
+	always @ (posedge clock) begin
+		
+		if (in_pulse == 1'b0) begin /* button is pushed */
+			
+				if (count < delay)
 					count <= count + 1;
-				end
-			else /* (in_pulse == 1'b1) button is released */
-				begin
-					count <= 0;
-				end
-				
-			if (count == delay)
-				begin
-					count <= 1'b0;
-					pulse <= 1'b1;
-				end
-			else /* (count == delay) */
-				begin
-					pulse <= 1'b0;
-				end
-		end
-
+		
+		end else begin /* (in_pulse == 1'b1) button is released */
+			if (count == delay) begin
+				pulse <= 1'b1;
+			end else begin /* (count == delay) */
+				pulse <= 1'b0;
+			end
+			count <= 0;
+		end	
+	
+	end
 endmodule
