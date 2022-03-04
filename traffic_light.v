@@ -9,7 +9,7 @@ localparam Y_STATE = 3'b100;
 localparam STOP_VAL = 8'hA;
 localparam BLG_STOP_VALUE = 8'h2;
 
-reg state;
+reg [2:0]state;
 reg [7:0] counter;
 reg [7:0] blg_counter;
 
@@ -75,6 +75,7 @@ always @(posedge reset, posedge clock) begin
 				if (counter == STOP_VAL) begin
 					counter <= 1;
 					state <= R_STATE;
+					{red, yellow, green} <= 3'b100;
 				end else begin
 					counter <= counter + 1;
 				end
