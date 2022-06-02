@@ -1,0 +1,28 @@
+module clock_divider(out_clock, in_clock, in_clock_n, divider, reset);
+
+output reg out_clock;
+
+input in_clock;
+input in_clock_n;
+input [15:0] divider;
+input reset;
+
+reg [15:0] counter;
+
+//wire in_clock_n;
+//assign in_clock_n = ~in_clock;
+
+always @ (posedge reset, posedge in_clock) begin
+
+	
+	if (counter == 1) begin
+		out_clock <= ~out_clock;
+		counter <= 1;
+	end else begin
+		
+		counter <= counter + 1;
+	
+	end
+	
+end
+endmodule
