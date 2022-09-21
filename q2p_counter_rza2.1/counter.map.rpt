@@ -1,5 +1,5 @@
 Analysis & Synthesis report for counter
-Tue May 31 12:51:07 2022
+Wed Sep 21 13:34:30 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -43,7 +43,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue May 31 12:51:07 2022       ;
+; Analysis & Synthesis Status        ; Successful - Wed Sep 21 13:34:30 2022       ;
 ; Quartus Prime Version              ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                      ; counter                                     ;
 ; Top-level Entity Name              ; counter                                     ;
@@ -162,13 +162,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                    ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------+---------+
-; counter.v                        ; yes             ; Auto-Found Verilog HDL File  ; /home/user/workspace/fpga/counter/counter.v ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                  ; Library ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+---------+
+; ../src/counter.v                 ; yes             ; User Verilog HDL File  ; /home/user/drive/workspace/fpga/src/counter.v ;         ;
++----------------------------------+-----------------+------------------------+-----------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -266,14 +266,28 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Tue May 31 12:51:01 2022
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off counter -c counter
+    Info: Copyright (C) 2020  Intel Corporation. All rights reserved.
+    Info: Your use of Intel Corporation's design tools, logic functions 
+    Info: and other software and tools, and any partner logic 
+    Info: functions, and any output files from any of the foregoing 
+    Info: (including device programming or simulation files), and any 
+    Info: associated documentation or information are expressly subject 
+    Info: to the terms and conditions of the Intel Program License 
+    Info: Subscription Agreement, the Intel Quartus Prime License Agreement,
+    Info: the Intel FPGA IP License Agreement, or other applicable license
+    Info: agreement, including, without limitation, that your use is for
+    Info: the sole purpose of programming logic devices manufactured by
+    Info: Intel and sold by Intel or its authorized distributors.  Please
+    Info: refer to the applicable agreement for further details, at
+    Info: https://fpgasoftware.intel.com/eula.
+    Info: Processing started: Wed Sep 21 13:34:23 2022
+Info: Command: quartus_map counter --source=../src/counter.v
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
-Warning (12125): Using design file counter.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: counter File: /home/user/workspace/fpga/counter/counter.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/user/drive/workspace/fpga/src/counter.v
+    Info (12023): Found entity 1: counter File: /home/user/drive/workspace/fpga/src/counter.v Line: 1
 Info (12127): Elaborating entity "counter" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at counter.v(13): truncated value with size 32 to match size of target (5) File: /home/user/workspace/fpga/counter/counter.v Line: 13
+Warning (10230): Verilog HDL assignment warning at counter.v(13): truncated value with size 32 to match size of target (5) File: /home/user/drive/workspace/fpga/src/counter.v Line: 13
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -281,10 +295,10 @@ Info (21057): Implemented 67 device resources after synthesis - the final resour
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 5 output pins
     Info (21061): Implemented 61 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 450 megabytes
-    Info: Processing ended: Tue May 31 12:51:07 2022
-    Info: Elapsed time: 00:00:06
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 419 megabytes
+    Info: Processing ended: Wed Sep 21 13:34:30 2022
+    Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:12
 
 

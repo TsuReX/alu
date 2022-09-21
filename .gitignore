@@ -1,0 +1,10 @@
+.cproject
+.project
+*.rpt
+*.summary
+*.qws
+*.done
+db/
+output_files/
+incremental_db/
+output_files/
