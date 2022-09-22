@@ -16,3 +16,5 @@ quartus_fit counter
 quartus_pgm -a
 quartus_pgm -c "USB-Blaster [2-1]"
 quartus_pgm -c "USB-Blaster [2-1]" --mode=JTAG
+quartus_map counter --analyze_file=../src/counter.v
+quartus_sh --flow compile counter
