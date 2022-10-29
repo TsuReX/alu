@@ -10,6 +10,11 @@ quartus_fit badprog1 --read_settings_files=off
 quartus_fit badprog1 --write_settings_files=off
 ```
 
+```bash
+export PATH=$PATH:"/home/user/drive/soft/intelFPGA_lite/20.1/quartus/bin/"
+export PATH=$PATH:"/home/user/drive/soft/intelFPGA_lite/20.1/modelsim_ase/bin/"
+```
+
 ##### Create new project
 
 The top level entity is counter.bdf - graphically represented schematic
