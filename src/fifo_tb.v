@@ -1,7 +1,7 @@
 `timescale 1ns/1ps
-
 module tb_fifo;
-
+localparam p = 5;
+  
   reg reset;
   reg clk_w;
   reg wre;
@@ -32,24 +32,25 @@ module tb_fifo;
     clk_w = 0;
     wre = 0;
     rde = 0;
-    #3 reset = 1;
-    #3 reset = 0;
-    
+    #p reset = 1;
+    #p reset = 0;
     wrd = 8'hA5;
-    #4 wre = 1;
-    #6 wre = 0;
+    #1;
+    while (full == 0) begin
+		wre = 1;
+		#(p);
+		wre = 0;
+		wrd = wrd + 5;
+		#9;
+    end
     
-    #5 wrd = 8'h5A;
-    #4 wre = 1;
-    #6 wre = 0;
+    #11;
     
-    #5 wrd = 8'hFF;
-    #4 wre = 1;
-    #6 wre = 0;
-    
-    #5 wrd = 8'h00;
-    #4 wre = 1;
-    #6 wre = 0;
+    while (empty == 0) begin
+    	rde = 1;
+    	#p;
+    	rde = 0;
+    end
     
     $monitor($time, ,clk_w, ,reset, ,wre, ,wrd);
   end
@@ -60,9 +61,9 @@ module tb_fifo;
   end
   
     initial
-    #100 $finish;
+    #200 $finish;
   
   always
-    #5 clk_w = ~clk_w;
+    #p clk_w = ~clk_w;
   
 endmodule

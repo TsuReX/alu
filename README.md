@@ -15,6 +15,10 @@ export PATH=$PATH:"/home/user/drive/soft/intelFPGA_lite/20.1/quartus/bin/"
 export PATH=$PATH:"/home/user/drive/soft/intelFPGA_lite/20.1/modelsim_ase/bin/"
 ```
 
+[SystemVerilog Testbench](https://www.chipverify.com/systemverilog/systemverilog-simple-testbench)  
+[Краткий курс HDL. Язык Verilog](https://kit-e.ru/hdl/kratkij-kurs/)  
+[FPGA designs with Verilog and SystenVerilog](https://verilogguide.readthedocs.io/en/latest/index.html#)
+
 ##### Create new project
 
 The top level entity is counter.bdf - graphically represented schematic
